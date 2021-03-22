@@ -1,0 +1,16 @@
+# pip install -r requirements.txt
+# cd .\webservice\
+# python -m flask run 
+#
+# Declarar variable con la ubicación del archivo
+# set FLASK_APP=webservice/test_app.py
+# set FLASK_ENV=development
+# flask run
+#
+
+
+flask
+flask_ngrok
+torchvision
+sklearn
+scikit-learn

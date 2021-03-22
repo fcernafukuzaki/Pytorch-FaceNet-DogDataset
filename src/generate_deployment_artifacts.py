@@ -9,15 +9,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from glob import glob
 import os
-from model import GoogLeNet
+from models import GoogLeNet
 
 from loss_fn import TripletLoss
 from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
 import joblib
 
-PRETRAINED_MODEL="./modelsave/best_model.pth"
-INDEXING_PATH="../input/indexing/*.jpg"
+PRETRAINED_MODEL="../modelsave/best_model.pth"
+#INDEXING_PATH="../input/indexing/*.jpg"
+INDEXING_PATH="../../data/after_4_bis/*/*.jpg"
 OUTPUT_PATH="artefacts"
 def load_model():
     model=GoogLeNet()
