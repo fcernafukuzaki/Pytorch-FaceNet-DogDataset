@@ -21,6 +21,7 @@ model.eval()
 
 def query_image():
     #pass
+    # Transforma la imagen en un tensor
     query_image=np.transpose(np.array(Image.open("./image.jpg")),(2,0,1))/255.0
     q_input=torch.tensor(query_image,dtype=torch.float).unsqueeze(0)
     q_embedding=model(q_input.cuda()).detach().cpu().numpy()
@@ -69,6 +70,7 @@ def search_func():
     for i,img in enumerate(img_index):
         # Carpeta static debe estar dentro de webservice. Mostrará todas las imágenes.
         files=glob(f"./static/imgs/{img}/*.*")
+        print(files[0].split("\\")[-1])
         images=[f"./static/imgs/{img}/"+t.split("\\")[-1] for t in files]
         #np.random.shuffle(images)
         results[f"results{i+1}"]=images
